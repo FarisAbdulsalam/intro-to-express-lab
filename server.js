@@ -57,7 +57,7 @@ app.get('/shoes', (req, res) => {
         shoeArr = shoeArr.filter(shoe => shoe.price >= minPrice);
     } else if(req.query['max-price']){
         let maxPrice = parseFloat(req.query['max-price']);
-        shoeArr = shoeArr.filter(shoe => shoe.price >= maxPrice);
+        shoeArr = shoeArr.filter(shoe => shoe.price <= maxPrice);
     } else if(req.query.type){
         shoeArr = shoeArr.filter(shoe => shoe.type === req.query.type);
     }
